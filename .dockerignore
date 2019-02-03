@@ -1,0 +1,15 @@
+.git
+.gitignore
+.flake8
+.editorconfig
+*.sql
+*.sql.gz
+*.rdb
+*.log
+data
+*.properties
+__pycache__
+*.pyc
+.venv/
+.vscode/
+.env
