@@ -9,6 +9,7 @@ flake8 = "*"
 tox = "*"
 autopep8 = "*"
 black = "*"
+ipdb = "*"
 
 [packages]
 feedparser = "*"
