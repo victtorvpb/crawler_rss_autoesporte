@@ -105,3 +105,4 @@ venv.bak/
 
 #folder project vscode
 .vscode
+*.json
