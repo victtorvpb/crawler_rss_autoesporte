@@ -11,7 +11,7 @@
 Created json with name  result- **{timestamp}** .json
 
 ## API
-`make start-docker`´
+`make start-docker`
 
 ### Get token:
 
