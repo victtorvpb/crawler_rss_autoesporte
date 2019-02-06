@@ -12,6 +12,7 @@ black = "*"
 ipdb = "*"
 pytest = "*"
 mock = "*"
+pytest-django = "*"
 
 [packages]
 feedparser = "*"
