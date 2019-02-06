@@ -6,7 +6,8 @@
 
 
 ## Generate json file
-`make generate-file`´
+`make generate-file`
+
 Created json with name  result- **{timestamp}** .json
 
 ## API
