@@ -42,14 +42,14 @@ class FeedRss(object):
         list_itens = []
         soup = BeautifulSoup(description, features="html.parser")
         for tag in soup.find_all():
-            data_item = self.__extract_data_item(tag)
+            data_item = self.extract_data_item(tag)
             if data_item:
                 list_itens.append(data_item)
         return list_itens
 
     def extract_data_item(self, item):
         if item.name == 'img':
-            image_data = self._get_image_data(item)
+            image_data = self.get_image_data(item)
             if image_data:
                 dict_image = {
                     'type': 'image',
@@ -57,7 +57,7 @@ class FeedRss(object):
                 }
                 return dict_image
         elif item.name == 'ul':
-            link_data = self._get_link_data(item)
+            link_data = self.get_link_data(item)
             if link_data:
                 dict_link = {
                     'type': 'links',
@@ -65,7 +65,7 @@ class FeedRss(object):
                 }
                 return dict_link
         elif item.name == 'p':
-            text_data = self._get_text_data(item)
+            text_data = self.get_text_data(item)
             if text_data:
                 dict_text = {
                     'type': 'text',
