@@ -2,6 +2,7 @@ import json
 from datetime import datetime
 
 from crawler.feed_rss import FeedRss
+
 url = 'http://revistaautoesporte.globo.com/rss/ultimas/feed.xml'
 
 feed = FeedRss(url=url)

@@ -10,9 +10,14 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         obj, created = User.objects.get_or_create(
-            username='admin', defaults={
+            username='admin',
+            defaults={
                 'email': 'admin@admin.com',
-                'is_active': True, 'is_superuser': True, 'is_staff': True})
+                'is_active': True,
+                'is_superuser': True,
+                'is_staff': True,
+            },
+        )
 
         if created:
             obj.set_password('admin')

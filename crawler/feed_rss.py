@@ -6,7 +6,6 @@ logger = logging.getLogger(__name__)
 
 
 class FeedRss(object):
-
     def __init__(self, url):
         self.url = url
 
@@ -51,26 +50,17 @@ class FeedRss(object):
         if item.name == 'img':
             image_data = self.get_image_data(item)
             if image_data:
-                dict_image = {
-                    'type': 'image',
-                    'content': image_data
-                }
+                dict_image = {'type': 'image', 'content': image_data}
                 return dict_image
         elif item.name == 'ul':
             link_data = self.get_link_data(item)
             if link_data:
-                dict_link = {
-                    'type': 'links',
-                    'content': link_data
-                }
+                dict_link = {'type': 'links', 'content': link_data}
                 return dict_link
         elif item.name == 'p':
             text_data = self.get_text_data(item)
             if text_data:
-                dict_text = {
-                    'type': 'text',
-                    'content': text_data
-                }
+                dict_text = {'type': 'text', 'content': text_data}
                 return dict_text
 
     def get_image_data(self, item):
