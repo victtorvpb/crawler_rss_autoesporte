@@ -18,6 +18,7 @@ feedparser = "*"
 beautifulsoup4 = "*"
 django = "*"
 djangorestframework = "*"
+djangorestframework-simplejwt = "*"
 
 [requires]
 python_version = "3.7"
