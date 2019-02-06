@@ -1,0 +1,35 @@
+version: '3.5'
+services:
+  api:
+    container_name: api
+    image: crawler_rss_autesporte
+    build:
+      context: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 80:8000
+    depends_on:
+      - tasks-migrate
+      - tasks-create-user
+
+  tasks-migrate:
+    container_name: migrate
+    image: crawler_rss_autesporte
+    build:
+      context: .
+    command: python manage.py migrate
+    volumes:
+      - .:/code
+  
+  tasks-create-user:
+    container_name: create_user_admin
+    image: crawler_rss_autesporte
+    build:
+      context: .
+    command: python manage.py create_default_user
+    volumes:
+      - .:/code
+    depends_on:
+      - tasks-migrate
