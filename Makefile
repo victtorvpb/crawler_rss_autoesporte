@@ -14,4 +14,5 @@ build-docker:
 start-docker:
 	docker-compose up -d
 generate-file: start-docker
-	docker-compose exec api python execute.py	
+	docker-compose exec api python execute.py
+	docker-compose stop
