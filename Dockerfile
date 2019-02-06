@@ -19,6 +19,6 @@ RUN pip install -U pip
 RUN pip install pipenv
 
 ### install requirements
-RUN pipenv lock -r --dev > requirements.txt
+RUN pipenv lock -r  > requirements.txt
 RUN pipenv --rm
 RUN pip install -r requirements.txt
