@@ -10,10 +10,14 @@ tox = "*"
 autopep8 = "*"
 black = "*"
 ipdb = "*"
+pytest = "*"
+mock = "*"
 
 [packages]
 feedparser = "*"
 beautifulsoup4 = "*"
+django = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"
