@@ -13,3 +13,7 @@ clean:
 	pipenv --rm
 build-docker:
 	docker build . -t crawler_rss_autesporte:v0
+start-docker:
+	docker-compose up -d
+generate-file: start-docker
+	docker-compose exec api python execute.py	
