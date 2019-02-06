@@ -1,6 +1,4 @@
 install:
-	$(info ************  Not command ************)
-install-requirements:
 	pipenv sync
 install-requirements-dev:
 	pipenv sync --dev
@@ -12,7 +10,7 @@ formatter:
 clean:
 	pipenv --rm
 build-docker:
-	docker build . -t crawler_rss_autesporte:v0
+	docker build . -t crawler_rss_autesporte
 start-docker:
 	docker-compose up -d
 generate-file: start-docker
