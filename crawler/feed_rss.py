@@ -6,17 +6,8 @@ logger = logging.getLogger(__name__)
 
 
 class FeedRss(object):
-    
-    def __init__(self, url):
-        """[summary]
-        
-        Parameters
-        ----------
-        url : [String]
-            [Url to rss]
-        
-        """
 
+    def __init__(self, url):
         self.url = url
 
     def __get_content_feed(self):
@@ -30,6 +21,7 @@ class FeedRss(object):
         return feed_content
 
     def genrate_dict_feed_content(self):
+
         list_dict = []
 
         itens = self.__get_content_feed()
@@ -55,7 +47,7 @@ class FeedRss(object):
                 list_itens.append(data_item)
         return list_itens
 
-    def __extract_data_item(self, item):
+    def extract_data_item(self, item):
         if item.name == 'img':
             image_data = self._get_image_data(item)
             if image_data:
@@ -81,12 +73,12 @@ class FeedRss(object):
                 }
                 return dict_text
 
-    def _get_image_data(self, item):
+    def get_image_data(self, item):
         assert item.name == 'img', 'Item is not tag *img*'
         if item.parent.name == 'div' and item.has_attr('src'):
             return item.get('src')
 
-    def _get_link_data(self, item):
+    def get_link_data(self, item):
         assert item.name == 'ul', 'Item is not tag *ul*'
         links = []
         for anchor in item.find_all('a'):
@@ -94,7 +86,7 @@ class FeedRss(object):
                 links.append(anchor.get('href'))
         return links
 
-    def _get_text_data(self, item):
+    def get_text_data(self, item):
         assert item.name == 'p', 'Item is not tag *p*'
         if item.get_text(strip=True):
             return item.get_text(strip=True)
