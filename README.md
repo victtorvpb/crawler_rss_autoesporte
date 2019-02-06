@@ -1,8 +1,8 @@
 # crawler_autosport
 
 ## Requirements
-* Python 3.6
-* [pipenv](https://docs.pipenv.org/)
+* [Docker](https://docs.docker.com/install/)
+* [Dcoker Compose](https://docs.docker.com/compose/install/)
 
 
 ## Generate json file
