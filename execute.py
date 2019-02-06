@@ -1,10 +1,10 @@
 import json
 from datetime import datetime
 
-from crawler.feed import Feed
+from crawler.feed_rss import FeedRss
 url = 'http://revistaautoesporte.globo.com/rss/ultimas/feed.xml'
 
-feed = Feed(url=url)
+feed = FeedRss(url=url)
 
 dict_feed = feed.genrate_dict_feed_content()
 
